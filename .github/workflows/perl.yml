@@ -18,7 +18,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Check Perl version
         run: perl -v
-      - name: Rub Perl code
+      - name: Run Perl code
         run: perl code.pl
 
       #- name: Install deps using cpm
