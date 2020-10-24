@@ -1,0 +1,10 @@
+name: Minimal Ubuntu
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Single step
+      run: echo Hello World
