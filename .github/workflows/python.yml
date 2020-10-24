@@ -4,6 +4,7 @@ on: [push]
 
 jobs:
   build_python:
+    if: ${{ false }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -12,8 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python ${{ matrix.python-version }}
-      #if: ${{ '' == '1' }}
-      if: ${{ false }}
+      #if: ${{ false }}
       uses: actions/setup-python@v2
       with:
         python-version: ${{ matrix.python-version }}
