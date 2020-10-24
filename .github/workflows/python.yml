@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   build_python:
-  if false
+  if: false
 
     runs-on: ubuntu-latest
     strategy:
