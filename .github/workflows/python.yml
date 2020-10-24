@@ -3,7 +3,7 @@ name: Python CI
 on: [push]
 
 jobs:
-  if: False
+  if: 0
   build_python:
     runs-on: ubuntu-latest
     strategy:
