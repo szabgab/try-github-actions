@@ -1,10 +1,10 @@
-name: Minimal Ubuntu
+name: Minimal MacOS
 
 on: [push]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
     - name: Single step
       run: echo Hello World
