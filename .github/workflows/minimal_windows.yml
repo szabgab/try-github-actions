@@ -12,16 +12,20 @@ jobs:
     - name: Look around
       run: |
         uname -a
-        pwd     # /home/runner/work/demo-actions/demo-actions
-        whoami  # runner
+        pwd
+        whoami
         uptime
         which perl
         which python
-        which python3
+        #which python3
         which ruby
         which node
         which java
         perl -v
-        python -V # 2.7.17
-        python3 -V
+        python -V    # 3.7.9
+        #python3 -V
+        ruby -v
+        node -v
+        javac -version
+        java -version
 

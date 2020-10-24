@@ -12,7 +12,7 @@ jobs:
     - name: Look around
       run: |
         uname -a
-        pwd     # /home/runner/work/demo-actions/demo-actions
+        pwd     # /home/runner/work/REPO/REPO
         whoami  # runner
         uptime
         which perl
@@ -22,6 +22,10 @@ jobs:
         which node
         which java
         perl -v
-        python -V # 2.7.17
+        python -V
         python3 -V
+        ruby -v
+        node -v
+        javac -version
+        java -version
 
