@@ -10,6 +10,7 @@ jobs:
       run: hostname
 
   test:
+    runs-on: ubuntu-latest
     container:
       image: perldocker/perl-tester:latest     # https://hub.docker.com/r/perldocker/perl-tester
     steps:
