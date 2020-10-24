@@ -12,14 +12,20 @@ jobs:
       matrix:
         perl-version:
           - '5.32'
-          - 'latest'
+#          - 'latest'
     name: Perl ${{ matrix.perl-version }}
     steps:
       - uses: actions/checkout@v2
       - name: Check Perl version
         run: perl -v
+      - name: Rub Perl code
+        run: perl code.pl
+
       #- name: Install deps using cpm
       #  uses: perl-actions/install-with-cpm@v1
       #  with:
       #    cpanfile: 'cpanfile'
       #    sudo: false
+
+env:
+   DEMO_FIELD: value
