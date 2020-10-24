@@ -3,9 +3,8 @@ name: Python CI
 on: [push]
 
 jobs:
-  build_python:
   if: false
-
+  build_python:
     runs-on: ubuntu-latest
     strategy:
       matrix:
