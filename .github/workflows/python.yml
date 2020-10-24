@@ -3,7 +3,6 @@ name: Python CI
 on: [push]
 
 jobs:
-  if: ${{0 == 1}}
   build_python:
     runs-on: ubuntu-latest
     strategy:
@@ -13,6 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python ${{ matrix.python-version }}
+      if: ${{ '' == '1' }}
       uses: actions/setup-python@v2
       with:
         python-version: ${{ matrix.python-version }}
