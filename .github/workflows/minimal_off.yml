@@ -1,0 +1,20 @@
+name: Minimal Ubuntu
+
+on:
+  push:
+    branches: '*'
+  schedule:
+    - cron: '*/5 * * * *'
+
+jobs:
+  build:
+    #if: ${{ false }}  # disable for now
+    runs-on: ubuntu-latest
+    steps:
+    - name: Single step
+      run: echo Hello World
+      #if: ${{ false }}
+
+    - name: Look around
+      run: |
+        printenv | sort
