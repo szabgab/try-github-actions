@@ -1,4 +1,4 @@
-name: Minimal Ubuntu
+name: Push and schedule
 
 on:
   push:

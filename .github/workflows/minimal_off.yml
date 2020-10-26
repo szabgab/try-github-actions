@@ -1,4 +1,4 @@
-name: Minimal Ubuntu
+name: Turning job or step off
 
 on:
   push:
