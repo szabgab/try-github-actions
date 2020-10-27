@@ -3,8 +3,8 @@ name: Push and schedule
 on:
   push:
     branches: '*'
-#  schedule:
-#    - cron: '*/5 * * * *'
+  schedule:
+    - cron: '*/5 * * * *'
 
 jobs:
   build:
@@ -20,9 +20,7 @@ jobs:
         printenv | sort
 
     - name: Conditional step
-      #if: env.GITHUB_EVENT_NAME == 'schedule'
-      #if: env.GITHUB_EVENT_NAME == 'push'
-      if: ${{ github.event_name == 'push' }}
+      if: ${{ github.event_name == 'schedule' }}
       run: |
         echo "Only run in schedule"
 
