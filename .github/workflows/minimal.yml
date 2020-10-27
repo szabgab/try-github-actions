@@ -21,7 +21,8 @@ jobs:
 
     - name: Conditional step
       #if: env.GITHUB_EVENT_NAME == 'schedule'
-      if: env.GITHUB_EVENT_NAME == 'push'
+      #if: env.GITHUB_EVENT_NAME == 'push'
+      if: $GITHUB_EVENT_NAME == 'push'
       run: |
         echo "Only run in schedule"
 
