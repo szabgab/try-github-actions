@@ -3,19 +3,10 @@ name: Push and schedule
 on:
   push:
     branches: '*'
-  pull_request:
-    branches: '*'
+#  pull_request:
+#    branches: '*'
   schedule:
     - cron: '*/5 * * * *'
-  workflow_dispatch:
-    inputs:
-      name:
-        description: 'Person to greet'
-        required: true
-        default: 'Mona the Octocat'
-      home:
-        description: 'location'
-        required: false
 
 jobs:
   build:
