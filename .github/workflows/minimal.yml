@@ -38,9 +38,11 @@ jobs:
 
     - name: Create file in homedir
       run: |
-        echo First        > ~/.config/home.txt
-        echo Second Line >> ~/.config/home.txt
-        echo Third       >> ~/.config/home.txt
+        ls -la ~/
+        echo First        > ~/.zorg/home.txt
+        echo Second Line >> ~/.zorg/home.txt
+        echo Third       >> ~/.zorg/home.txt
+        ls -la ~/.zorg/
 
 
     - name: Show file content
@@ -48,7 +50,7 @@ jobs:
         ls -l
         cat other.txt
         ls -la ~/
-        cat ~/.config/home.txt
+        cat ~/.zorg/home.txt
 
 
 #    - name: Look around
