@@ -19,7 +19,7 @@ jobs:
 
     - name: Create file
       run: |
-        echo "Hello World\n" > abc.txt
+        printf "Hello\nWorld\n" > abc.txt
 
     - name: Look around
       run: |
@@ -29,6 +29,18 @@ jobs:
     - name: Show file content
       run: |
         cat abc.txt
+
+    - name: Create file
+      run: |
+        'echo "First
+Second
+Third" > other.txt'
+
+    - name: Show file content
+      run: |
+        ls -l
+        cat other.txt
+
 
 #    - name: Look around
 #      run: |
