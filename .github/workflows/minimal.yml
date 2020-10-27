@@ -21,10 +21,21 @@ jobs:
       run: |
         printenv | sort
 
-    - name: Conditional step
+    - name: Conditional step (push)
+      if: ${{ github.event_name == 'push' }}
+      run: |
+        echo "Only run on a push"
+
+    - name: Conditional step (schedule)
       if: ${{ github.event_name == 'schedule' }}
       run: |
         echo "Only run in schedule"
+
+    - name: Conditional step (pull_request)
+      if: ${{ github.event_name == 'pull_request' }}
+      run: |
+        echo "Only run in pull-request"
+
 
     - name: Step after
       run: |
