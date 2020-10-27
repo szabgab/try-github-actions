@@ -30,16 +30,14 @@ jobs:
       run: |
         cat abc.txt
 
-#    - name: Create file
-#      run: |
-#        'echo "First
-#Second
-#Third" > other.txt'
-#
-#    - name: Show file content
-#      run: |
-#        ls -l
-#        cat other.txt
+    - name: Create file
+      run: |
+        "echo 'First
+        Third' > other.txt"
+    - name: Show file content
+      run: |
+        ls -l
+        cat other.txt
 
 
 #    - name: Look around
