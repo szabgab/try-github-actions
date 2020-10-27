@@ -35,10 +35,20 @@ jobs:
         echo First        > other.txt
         echo Second Line >> other.txt
         echo Third       >> other.txt
+
+    - name: Create file in homedir
+      run: |
+        echo First        > ~/.config/home.txt
+        echo Second Line >> ~/.config/home.txt
+        echo Third       >> ~/.config/home.txt
+
+
     - name: Show file content
       run: |
         ls -l
         cat other.txt
+        ls -la ~/
+        cat ~/.config/home.txt
 
 
 #    - name: Look around
