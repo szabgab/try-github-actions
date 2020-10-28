@@ -23,7 +23,7 @@ jobs:
     - name: Single step
       env:
          DEMO_FRUIT: ${{ matrix.fruit }}
-         DEMO_MEAL:  ${{ matris.lunch }}
+         DEMO_MEAL:  ${{ matrix.lunch }}
       run: |
         echo $DEMO_FRUIT for $DEMO_MEAL
 
