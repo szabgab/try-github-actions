@@ -20,6 +20,15 @@ jobs:
         echo $GITHUB_EVENT_NAME
         echo $DEMO
 
+    - name: Single step
+      env:
+         DEMO: Bar
+      run: |
+        echo Hello World
+        echo $GITHUB_EVENT_NAME
+        echo $DEMO
+
+
 #    - name: Create file
 #      run: |
 #        printf "Hello\nWorld\n" > abc.txt
