@@ -7,26 +7,25 @@ on:
 #    branches: 'master'
 #  schedule:
 #    - cron: '*/5 * * * *'
-env:
-  DEMO: Foo
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        fruit:
+          - Apple
+          - Banana
+        meal:
+          - Breakfast
+          - Lunch
     steps:
     - name: Single step
-      run: |
-        echo Hello World
-        echo $GITHUB_EVENT_NAME
-        echo $DEMO
-
-    - name: Single step
       env:
-         DEMO: Bar
+         DEMO_FRUIT: ${{ matrix.fruit }}
+         DEMO_MEAL:  ${{ matris.lunch }}
       run: |
-        echo Hello World
-        echo $GITHUB_EVENT_NAME
-        echo $DEMO
+        echo $DEMO_FRUIT for $DEMO_MEAL
 
 
 #    - name: Create file
