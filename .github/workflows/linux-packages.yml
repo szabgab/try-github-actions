@@ -1,4 +1,4 @@
-name: Push and schedule
+name: Install Linux packages
 
 on:
   push:
@@ -14,7 +14,6 @@ jobs:
 
     - name: Install package
       run: |
-        sudo apt-get install tree
-        sudo apt-get install ack
+        sudo apt-get -y install tree
         which tree
 
