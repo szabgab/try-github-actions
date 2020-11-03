@@ -15,5 +15,6 @@ jobs:
     - name: Install package
       run: |
         sudo apt-get install tree
+        sudo apt-get install ack
         which tree
 
