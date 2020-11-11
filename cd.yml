@@ -14,8 +14,8 @@ jobs:
 
     - name: Experiment
       run: |
-        pwd
+        pwd             # /home/runner/work/try/try
         mkdir hello
         cd hello
-        pwd
+        pwd             # /home/runner/work/try/try/hello
 
