@@ -18,4 +18,13 @@ jobs:
         uname -a
         printenv | sort
         perl -v
+
+    - name: Install cpanm
+      if: ${{ matrix.runner != "windows-latest" }}
+      run: |
+        curl -L https://cpanmin.us | perl - App::cpanminus
+
+    - name: Install module
+      run: |
         cpanm Module::Runtime
+        cpanm Dancer2
