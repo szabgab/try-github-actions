@@ -19,17 +19,19 @@ jobs:
       run: |
         printenv | grep GITHUB | sort
 
-#    - name: Create page
-#      run: |
-#        mkdir -p docs
-#        date >> docs/dates.txt
-#        echo '<pre>'            > docs/index.html
-#        sort -r docs/dates.txt >> docs/index.html
-#        echo '</pre>'          >> docs/index.html
+    - name: Create page
+      run: |
+        mkdir -p docs
+        date >> docs/dates.txt
+        echo '<pre>'            > docs/index.html
+        sort -r docs/dates.txt >> docs/index.html
+        echo '</pre>'          >> docs/index.html
 
     - name: Commit new page
       run: |
-        if: ${{ git st --porcelain }}
+      env:
+        GIT_STATUS: ${{ git st --porcelain }}
+        echo $GIT_STATUS
         git config --global user.name 'Gabor Szabo'
         git config --global user.email 'szabgab@users.noreply.github.com'
         git add docs/
