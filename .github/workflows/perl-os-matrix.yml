@@ -33,4 +33,4 @@ jobs:
     - name: Install module
       run: |
         cpanm Module::Runtime
-        cpanm Dancer2
+        cpanm MetaCPAN::Client
