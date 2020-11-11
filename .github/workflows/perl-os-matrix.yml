@@ -1,4 +1,4 @@
-name: OS Matrix
+name: OS and Perl Matrix
 
 on: push
 
@@ -8,10 +8,15 @@ jobs:
       fail-fast: false
       matrix:
         runner: [ubuntu-latest, macos-latest, windows-latest]
-
-    runs-on: ${{matrix.runner}}
+        perl: [ '5.32', '5.30' ]
+    runs-on: OS ${{matrix.runner}} Perl ${{matrix.perl}}
     steps:
     - uses: actions/checkout@v2
+
+    - name: Set up perl
+        uses: shogo82148/actions-setup-perl@v1
+        with:
+          perl-version: ${{ matrix.perl }}
 
     - name: View environment
       run: |
@@ -19,10 +24,10 @@ jobs:
         printenv | sort
         perl -v
 
-    - name: Install cpanm
-      if: ${{ matrix.runner != "windows-latest" }}
-      run: |
-        curl -L https://cpanmin.us | perl - App::cpanminus
+    #- name: Install cpanm
+    #  if: ${{ matrix.runner != "windows-latest" }}
+    #  run: |
+    #    curl -L https://cpanmin.us | perl - App::cpanminus
 
     - name: Install module
       run: |
