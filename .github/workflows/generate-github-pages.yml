@@ -26,7 +26,7 @@ jobs:
         echo '<pre>'            > docs/index.html
         sort -r docs/dates.txt >> docs/index.html
         echo '</pre>'          >> docs/index.html
-        GIT_STATUS=$(git status --porcelain)
+        export GIT_STATUS=$(git status --porcelain)
 
     - name: Commit new page
       run: |
