@@ -26,10 +26,10 @@ jobs:
         echo '<pre>'            > docs/index.html
         sort -r docs/dates.txt >> docs/index.html
         echo '</pre>'          >> docs/index.html
+        GIT_STATUS=$(git status --porcelain)
 
     - name: Commit new page
       run: |
-        GIT_STATUS=$(git status --porcelain)
         echo $GIT_STATUS
         git config --global user.name 'Gabor Szabo'
         git config --global user.email 'szabgab@users.noreply.github.com'
