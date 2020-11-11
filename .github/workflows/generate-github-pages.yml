@@ -28,9 +28,8 @@ jobs:
         echo '</pre>'          >> docs/index.html
 
     - name: Commit new page
-      env:
-        GIT_STATUS: ${{ git st --porcelain }}
       run: |
+        GIT_STATUS=$(git st --porcelain)
         echo $GIT_STATUS
         git config --global user.name 'Gabor Szabo'
         git config --global user.email 'szabgab@users.noreply.github.com'
