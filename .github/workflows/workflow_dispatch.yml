@@ -3,6 +3,7 @@ name: Push and Workflow Dispatch
 on:
   push:
     branches: '*'
+  workflow_dispatch:
 
 jobs:
   build:
