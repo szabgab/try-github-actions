@@ -29,7 +29,7 @@ jobs:
 
     - name: Commit new page
       run: |
-        #if: ${{ github.repository == 'szabgab/try' }}
+        if: ${{ github.repository == 'szabgab/try' }}
         GIT_STATUS=$(git status --porcelain)
         echo $GIT_STATUS
         git config --global user.name 'Gabor Szabo'
