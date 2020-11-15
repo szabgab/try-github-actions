@@ -1,4 +1,4 @@
-name: Push and schedule
+name: Generate web page
 
 on:
   push:
