@@ -1,0 +1,90 @@
+name: Push and schedule
+
+on:
+  push:
+    branches: '*'
+#  pull_request:
+#    branches: 'master'
+#  schedule:
+#    - cron: '*/5 * * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Single step
+      uses: actions/setup-python@v2
+      #with:
+      #  python-version: 3.8
+    - name: Single step
+      run: |
+        pip install -r requirements.txt
+        pytest
+
+
+#    - name: Create file
+#      run: |
+#        printf "Hello\nWorld\n" > abc.txt
+#
+#    - name: Look around
+#      run: |
+#        pwd
+#        ls -l
+#        #find ~/
+#
+#    - name: Show file content
+#      run: |
+#        cat abc.txt
+#
+#    - name: Create file
+#      run: |
+#        echo First        > other.txt
+#        echo Second Line >> other.txt
+#        echo Third       >> other.txt
+#
+#    - name: Create file in homedir
+#      run: |
+#        ls -la ~/
+#        mkdir ~/.zorg
+#        echo First        > ~/.zorg/home.txt
+#        echo Second Line >> ~/.zorg/home.txt
+#        echo Third       >> ~/.zorg/home.txt
+#        ls -la ~/.zorg/
+#
+#
+#    - name: Show file content
+#      run: |
+#        ls -l
+#        cat other.txt
+#        ls -la ~/
+#        cat ~/.zorg/home.txt
+
+
+#    - name: Look around
+#      run: |
+#        printenv | sort
+#
+#    - name: Conditional step (push)
+#      if: ${{ github.event_name == 'push' }}
+#      run: |
+#        echo "Only run on a push"
+#
+#    - name: Conditional step (schedule)
+#      if: ${{ github.event_name == 'schedule' }}
+#      run: |
+#        echo "Only run in schedule"
+#
+#    - name: Conditional step (pull_request)
+#      if: ${{ github.event_name == 'pull_request' }}
+#      run: |
+#        echo "Only run in pull-request"
+#
+#
+#    - name: Step after
+#      run: |
+#        echo "Always run"
+

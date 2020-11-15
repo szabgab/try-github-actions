@@ -28,7 +28,7 @@ jobs:
         echo '</pre>'          >> docs/index.html
 
     - name: Commit new page
-      if: ${{ github.repository == 'szabgab/try' }}
+      if: github.repository == 'szabgab/try'
       run: |
         GIT_STATUS=$(git status --porcelain)
         echo $GIT_STATUS
