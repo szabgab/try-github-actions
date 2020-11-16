@@ -24,6 +24,6 @@ jobs:
     - name: Step two
       run: |
           echo Runs if there was no failure
-          ls
+          ls qqrq
 
 
