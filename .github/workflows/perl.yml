@@ -26,12 +26,13 @@ jobs:
     - name: Show Perl Version
       run: |
         perl -v
+        cpanm Dancer2
 
     - name: Show Perl Version
       if:  ${{ startsWith( matrix.runner, 'windows-')}}
       run: |
          ls -l C:/Users/
          ls -l C:/Users/RUNNER~1/
-         #ls -l C:/Users/RUNNER~1/.cpanm/work/*/build.log
+         cat C:/Users/runneradmin/.cpanm/work/*/build.log
 
 
