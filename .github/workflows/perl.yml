@@ -21,17 +21,17 @@ jobs:
       uses: shogo82148/actions-setup-perl@v1
       with:
           perl-version: ${{ matrix.perl }}
-          distribution: strawberry
-
-    - name: Set up perl
-      if: ${{ ! startsWith( matrix.runner, 'windows-' )  }}
-      uses: shogo82148/actions-setup-perl@v1
-      with:
-          perl-version: ${{ matrix.perl }}
-
+          distribution: ${{ ( startsWith( matrix.runner, 'windows-' ) && 'strawberry' ) || 'default' }}
 
     - name: Show Perl Version
       run: |
         perl -v
+
+    - name: Show Perl Version
+      if:  ${{ startsWith( matrix.runner, 'windows-')}}
+      run: |
+         ls -l C:/Users/
+         ls -l C:/Users/RUNNER~1/
+         #ls -l C:/Users/RUNNER~1/.cpanm/work/*/build.log
 
 
