@@ -28,7 +28,7 @@ jobs:
         cpanm Dancer2
 
     - name: Show Perl Version
-      if:  ${{ startsWith( matrix.runner, 'windows-')}}
+      if:  ${{ failure() && startsWith( matrix.runner, 'windows-')}}
       run: |
          ls -l C:/Users/
          ls -l C:/Users/RUNNER~1/
