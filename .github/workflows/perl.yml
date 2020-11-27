@@ -25,9 +25,12 @@ jobs:
     - name: Show Perl Version
       run: |
         perl -v
+
+    - name: Install Modules
+      run: |
         cpanm Dancer2
 
-    - name: Show Perl Version
+    - name: Show Errors
       if:  ${{ failure() && startsWith( matrix.runner, 'windows-')}}
       run: |
          ls -l C:/Users/
