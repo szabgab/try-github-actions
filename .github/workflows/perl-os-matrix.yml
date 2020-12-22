@@ -20,11 +20,11 @@ jobs:
           cat date.txt
 
       - name: Archive production artifacts
-          uses: actions/upload-artifact@v2
-          with:
-            name: the-date
-            path: |
-              date.txt
+        uses: actions/upload-artifact@v2
+        with:
+          name: the-date
+          path: |
+            date.txt
 
   test:
     strategy:
