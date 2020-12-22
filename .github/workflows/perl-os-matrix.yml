@@ -47,10 +47,17 @@ jobs:
         with:
           name: the-date
 
-      - name: View artifact
+      - name: View artifact on Linux and OSX
+        if: ${{ ! startsWith( matrix.runner, 'windows-' )  }}
         run: |
           ls -l
           cat date.txt
           date
 
+      - name: View artifact on Windows
+        if: ${{ startsWith( matrix.runner, 'windows-' )  }}
+        run: |
+          dir
+          type date.txt
+          date
 
