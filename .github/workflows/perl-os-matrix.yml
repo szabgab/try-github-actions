@@ -4,35 +4,51 @@ on: push
 
 jobs:
   build:
+    runs-on: ubuntu-latest
+    name: Build
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: View environment
+        run: |
+          uname -a
+          printenv | sort
+
+      - name: Build
+        run: |
+          date > date.txt
+          cat date.txt
+
+      - name: Archive production artifacts
+          uses: actions/upload-artifact@v2
+          with:
+            name: the-date
+            path: |
+              date.txt
+
+  test:
     strategy:
-      fail-fast: false
       matrix:
         runner: [ubuntu-latest, macos-latest, windows-latest]
-        perl: [ '5.32', '5.30' ]
     runs-on: ${{matrix.runner}}
-    name: OS ${{matrix.runner}} Perl ${{matrix.perl}}
+    name: OS ${{matrix.runner}}
+
     steps:
-    - uses: actions/checkout@v2
+      - name: View environment
+        run: |
+          uname -a
+          printenv | sort
+          ls -l
 
-    - name: Set up perl
-      uses: shogo82148/actions-setup-perl@v1
-      with:
-          perl-version: ${{ matrix.perl }}
-          #distribution: strawberry
+      - name: Download a single artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: the-date
 
-    - name: View environment
-      run: |
-        uname -a
-        printenv | sort
-        perl -v
+      - name: View artifact
+        run: |
+          ls -l
+          cat date.txt
+          date
 
-    #- name: Install cpanm
-    #  if: ${{ matrix.runner != "windows-latest" }}
-    #  run: |
-    #    curl -L https://cpanmin.us | perl - App::cpanminus
 
-    - name: Install module
-      run: |
-        cpanm Module::Runtime
-        cpanm namespace::autoclean
-    #    cpanm MetaCPAN::Client
