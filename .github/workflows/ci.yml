@@ -37,6 +37,7 @@ jobs:
 
     steps:
       - name: View environment
+        if: ${{ ! startsWith( matrix.runner, 'windows-' )  }}
         run: |
           uname -a
           printenv | sort
