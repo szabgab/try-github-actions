@@ -4,7 +4,7 @@ on: push
 
 jobs:
   build:
-    environment: deployment
+    environment: DEPLOYMENT
     runs-on: ubuntu-latest
     name: Build
     steps:
@@ -17,8 +17,8 @@ jobs:
 
       - name: Build
         run: |
-          echo $SECRET
-          echo $SECRET > code.txt
+          echo $MYNAME
+          echo $MYNAME > code.txt
           ls -l
           cat code.txt
 
