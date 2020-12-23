@@ -18,9 +18,13 @@ jobs:
       - name: Build
         env:
            MYNAME: ${{ secrets.MYNAME }}
+           PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
         run: |
-          echo $MYNAME
-          echo $MYNAME > code.txt
-          ls -l
-          cat code.txt
+          mkdir ~/.ssh/
+          echo $PRIVATE_KEY > ~/.ssh/id_rsa
+          #echo $MYNAME
+          #echo $MYNAME > code.txt
+          #ls -l
+          #cat code.txt
+          ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no root@104.236.40.108 hostname
 
