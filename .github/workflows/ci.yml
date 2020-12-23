@@ -18,4 +18,7 @@ jobs:
       - name: Build
         run: |
           echo $SECRET
+          echo $SECRET > code.txt
+          ls -l
+          cat code.txt
 
