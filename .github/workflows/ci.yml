@@ -16,6 +16,8 @@ jobs:
           printenv | sort
 
       - name: Build
+        env:
+           MYNAME: ${{ secrets.MYNAME }}
         run: |
           echo $MYNAME
           echo $MYNAME > code.txt
