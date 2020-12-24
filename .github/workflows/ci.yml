@@ -4,7 +4,7 @@ on: push
 
 jobs:
   build:
-    environment: DEPLOYMENT
+    #environment: DEPLOYMENT
     runs-on: ubuntu-latest
     name: Build
     steps:
@@ -22,6 +22,9 @@ jobs:
         run: |
           mkdir ~/.ssh/
           echo $PRIVATE_KEY > ~/.ssh/id_rsa
+          sudo chmod 600 ~/.ssh/id_rsa
+          #ssh-keyscan -H ${{secrets.DEPLOY_SERVER}} > ~/.ssh/known_hosts
+ 
           #echo $MYNAME
           #echo $MYNAME > code.txt
           #ls -l
