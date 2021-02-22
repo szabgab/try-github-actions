@@ -14,7 +14,7 @@ jobs:
           github-token: ${{ github.token }}
           issue-lock-inactive-days: 0
 
-    - name: Echo
-      run:
-        echo Hello
+      - name: Echo
+        run:
+          echo Hello
 
