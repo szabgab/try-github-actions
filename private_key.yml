@@ -1,0 +1,33 @@
+name: OS and Perl Matrix
+
+on: push
+
+jobs:
+  build:
+    #environment: DEPLOYMENT
+    runs-on: ubuntu-latest
+    name: Build
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: View environment
+        run: |
+          uname -a
+          printenv | sort
+
+      - name: Build
+        env:
+           MYNAME: ${{ secrets.MYNAME }}
+           PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+        run: |
+          mkdir ~/.ssh/
+          echo $PRIVATE_KEY > ~/.ssh/id_rsa
+          sudo chmod 600 ~/.ssh/id_rsa
+          #ssh-keyscan -H ${{secrets.DEPLOY_SERVER}} > ~/.ssh/known_hosts
+ 
+          #echo $MYNAME
+          #echo $MYNAME > code.txt
+          #ls -l
+          #cat code.txt
+          ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no root@104.236.40.108 hostname
+
