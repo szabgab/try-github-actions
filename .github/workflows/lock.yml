@@ -1,8 +1,9 @@
 name: 'Lock threads'
 
 on:
+  push:
   schedule:
-    - cron: '0 * * * *'
+    - cron: '0 0 * * *'
 
 jobs:
   lock:
@@ -11,4 +12,4 @@ jobs:
       - uses: dessant/lock-threads@v2
         with:
           github-token: ${{ github.token }}
-          issue-lock-inactive-days: 0.05
+          issue-lock-inactive-days: 0
