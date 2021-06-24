@@ -1,4 +1,4 @@
-require "spec"
+require "./spec_helper"
 describe "demo" do
   it "tests" do
     x = 2
