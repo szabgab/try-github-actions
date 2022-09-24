@@ -1,4 +1,4 @@
-name: CI
+name: Perl
 
 on: push
 
@@ -28,7 +28,7 @@ jobs:
 
     - name: Install Modules
       run: |
-        cpanm Dancer2
+        cpanm -v
 
     - name: Show Errors
       if:  ${{ failure() && startsWith( matrix.runner, 'windows-')}}

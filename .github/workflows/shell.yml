@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: View environment
+      - name: Shell - View environment
         run: |
           uname -a
           printenv | sort
