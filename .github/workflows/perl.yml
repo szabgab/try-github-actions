@@ -31,6 +31,13 @@ jobs:
     - name: Install Modules
       run: |
         cpanm -v
+        cpanm --installdeps .
+
+    - name: Run tests
+      run: |
+        perl Makerfile.PL
+        make
+        make test
 
     - name: Show Errors
       if:  ${{ failure() && startsWith( matrix.runner, 'windows-')}}

@@ -1,1 +1,10 @@
+# Python
 __pycahce__
+
+# Perl
+MYMETA.json
+MYMETA.yml
+Makefile
+blib/
+pm_to_blib
+
