@@ -35,7 +35,7 @@ jobs:
 
     - name: Run tests
       run: |
-        perl Makerfile.PL
+        perl Makefile.PL
         make
         make test
 
