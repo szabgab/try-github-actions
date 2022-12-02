@@ -12,8 +12,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        #redis: ['6.0', '7.0', 'latest']
-        redis: ['latest']
+        redis: ['6.0', '7.0', 'latest']
+        #redis: ['latest']
     services:
       redis:
         image: redis:${{matrix.redis}}
@@ -43,18 +43,15 @@ jobs:
           redis-cli -h redis set name "Foo Bar"
           redis-cli -h redis get name
 
-      - name: Redis with curl
-        run: |
-          set -x
-          # curl http://redis:8001/
-          # curl http://redis:8888/ping   # Failed to connect to redis port 8888   - exit 7
-          # curl -w '\n' http://redis:8888/ping
-          # curl -X GET -H "accept: application/json"  http://redis:9443/v1/bdbs -k -i  # failed to connect - exit code 7
-          # curl -X GET -H "accept: application/json"  http://redis:6379/v1/bdbs -k -i  # Empty reply from server - exit code 52
-          # curl  -X GET -H "accept: application/json" http://redis:6379/ping #  Empty reply from server - exit code 52
-          # curl  -X GET -H "accept: application/json" http://redis:6379 #  Empty reply from server - exit code 52
-          # curl  -X GET -H "accept: application/json" http://redis:6379/v1/get/name #  Empty reply from server - exit code 52
-          curl -X GET -H "accept: application/json"  http://redis:6379/ping
-          #curl -X GET -H "accept: application/json"  http://redis:6379/v1/bdbs
-  # 6390
+      #- name: Redis with curl
+      #  run: |
+      #    set -x
+      #    # curl http://redis:8001/
+      #    # curl http://redis:8888/ping   # Failed to connect to redis port 8888   - exit 7
+      #    # curl -w '\n' http://redis:8888/ping
+      #    # curl -X GET -H "accept: application/json"  http://redis:9443/v1/bdbs -k -i  # failed to connect - exit code 7
+      #    # curl -X GET -H "accept: application/json"  http://redis:6379/v1/bdbs -k -i  # Empty reply from server - exit code 52
+      #    # curl -X GET -H "accept: application/json" http://redis:6379/ping #  Empty reply from server - exit code 52
+      #    # curl -X GET -H "accept: application/json" http://redis:6379 #  Empty reply from server - exit code 52
+      #    # curl -X GET -H "accept: application/json" http://redis:6379/v1/get/name #  Empty reply from server - exit code 52
 
