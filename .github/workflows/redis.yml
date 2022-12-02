@@ -31,5 +31,7 @@ jobs:
           apt-get install -y iputils-ping
           apt-get install -y curl
           ping -c 4 redis
-          curl http://redis:8001/
+          #curl http://redis:8001/
+          curl http://redis:8888/ping
+          curl -w '\n' http://redis:8888/ping
 
