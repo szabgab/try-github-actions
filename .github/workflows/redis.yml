@@ -34,6 +34,7 @@ jobs:
           #curl http://redis:8001/
           #curl http://redis:8888/ping
           #curl -w '\n' http://redis:8888/ping
-          curl -s http://redis:6379/ping
+          #curl -s http://redis:6379/ping
+          curl -s -X GET -H "accept: application/json"  http://redis:6379/v1/bdbs -k -i
   # 6390
 
