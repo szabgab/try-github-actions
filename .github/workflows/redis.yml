@@ -25,8 +25,8 @@ jobs:
 
       - name: Try
         run: |
-          sudo apt-get update
-          sudo apt-get install -y ping
+          apt-get update
+          apt-get install -y ping
           #uname -a
           #printenv | sort
           ping -c 4 redis
