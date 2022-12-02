@@ -29,8 +29,7 @@ jobs:
         run: |
           apt-get update
           apt-get install -y iputils-ping
-          #uname -a
-          #printenv | sort
+          apt-get install -y curl
           ping -c 4 redis
           curl http://redis:8001/
 
