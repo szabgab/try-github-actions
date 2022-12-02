@@ -23,8 +23,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Shell - View environment
+      - name: Try
         run: |
+          sudo apt-get update
+          sudo apt-get install -y ping
           #uname -a
           #printenv | sort
           ping -c 4 redis
