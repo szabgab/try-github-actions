@@ -46,6 +46,7 @@ jobs:
           # curl -X GET -H "accept: application/json"  http://redis:6379/v1/bdbs -k -i  # Empty reply from server - exit code 52
           # curl  -X GET -H "accept: application/json" http://redis:6379/ping #  Empty reply from server - exit code 52
           # curl  -X GET -H "accept: application/json" http://redis:6379 #  Empty reply from server - exit code 52
+          redis-cli -h redis get name
           redis-cli -h redis set name "Foo Bar"
           redis-cli -h redis get name
   # 6390
