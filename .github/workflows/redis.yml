@@ -40,8 +40,8 @@ jobs:
           #curl http://redis:8001/
           #curl http://redis:8888/ping
           #curl -w '\n' http://redis:8888/ping
-          #curl -s http://redis:6379/ping
-          curl -X GET -H "accept: application/json"  http://redis:6379/v1/bdbs -k -i
           # curl -X GET -H "accept: application/json"  http://redis:9443/v1/bdbs -k -i  # failed to connect
+          # curl -X GET -H "accept: application/json"  http://redis:6379/v1/bdbs -k -i  # Empty reply from server
+          curl  -X GET -H "accept: application/json" http://redis:6379/ping # comment
   # 6390
 
