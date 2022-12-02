@@ -9,12 +9,13 @@ on:
 
 jobs:
   test:
-    #strategy:
-    #  fail-fast: false
-    #  runner: [ubuntu-latest, macos-latest, windows-latest]
+    strategy:
+      fail-fast: false
+      #redis: ['6.0', '7.0', 'latest']
+      redis: ['latest']
     services:
       redis:
-        image: redis
+        image: redis:${matrix.redis}
 
     runs-on: ubuntu-latest
     container: ubuntu:22.10
@@ -26,7 +27,7 @@ jobs:
       - name: Try
         run: |
           apt-get update
-          apt-get install -y ping
+          apt-get install -y iputils-ping
           #uname -a
           #printenv | sort
           ping -c 4 redis
