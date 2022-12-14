@@ -12,10 +12,10 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Run Experiment
-        uses: szabgab/github-action-python
+        uses: szabgab/github-action-python@657510231202a336fdf002fde09372c35c4ef19a
 
 #      - name: Run Experiment
-#        uses: szabgab/github-action-experiment
+#        uses: szabgab/github-action-experiment@v1
 #        with:
 #          name: Foo
 
