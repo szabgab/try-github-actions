@@ -24,4 +24,5 @@ jobs:
           SOME_VARIABLE: some value
         run: |
           ./show_env.sh
+          ./show_env.pl
 
