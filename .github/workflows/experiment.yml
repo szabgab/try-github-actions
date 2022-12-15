@@ -22,6 +22,7 @@ jobs:
       - name: Show env
         env:
           SOME_VARIABLE: some value
+          PERL5LIB: /some/place
         run: |
           ./show_env.sh
           ./show_env.pl
