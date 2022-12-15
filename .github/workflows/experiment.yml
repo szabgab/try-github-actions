@@ -14,9 +14,14 @@ jobs:
 #      - name: Run Experiment
 #        uses: szabgab/github-actions-python@657510231202a336fdf002fde09372c35c4ef19a
 
-      - name: Run Experiment
-        uses: szabgab/github-actions-experiment@main
+#      - name: Run Experiment
+#        uses: szabgab/github-actions-experiment@main
 #        with:
 #          name: Foo
 
+      - name: Show env
+        env:
+          SOME_VARIABLE: some value
+        run: |
+          show_env.sh
 
