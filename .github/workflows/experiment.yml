@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Build
     steps:
-      - uses: actions/checkout@v3
+#      - uses: actions/checkout@v3
 
 #      - name: Run Experiment
 #        uses: szabgab/github-actions-python@657510231202a336fdf002fde09372c35c4ef19a
@@ -20,10 +20,12 @@ jobs:
 #          name: Foo
 
       - name: Show env
-        env:
-          SOME_VARIABLE: some value
-          PERL5LIB: /some/place
+#        env:
+#          SOME_VARIABLE: some value
+#          PERL5LIB: /some/place
         run: |
-          ./show_env.sh
-          ./show_env.pl
+          uname
+          printenv | sort
+          #./show_env.sh
+          #./show_env.pl
 
