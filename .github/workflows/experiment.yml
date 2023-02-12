@@ -25,7 +25,12 @@ jobs:
 #          PERL5LIB: /some/place
         run: |
           uname
+          echo "-----"
           printenv | sort
+          echo "-----"
+          pwd
+          echo "-----"
+          ls -l
           #./show_env.sh
           #./show_env.pl
 
