@@ -8,21 +8,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     name: Build
+
     steps:
-#      - uses: actions/checkout@v3
-
-#      - name: Run Experiment
-#        uses: szabgab/github-actions-python@657510231202a336fdf002fde09372c35c4ef19a
-
-#      - name: Run Experiment
-#        uses: szabgab/github-actions-experiment@main
-#        with:
-#          name: Foo
+      - name: Single command
+        run: echo Hello World!
 
       - name: Show env
-#        env:
-#          SOME_VARIABLE: some value
-#          PERL5LIB: /some/place
         run: |
           uname
           echo "-----"
@@ -31,6 +22,4 @@ jobs:
           pwd
           echo "-----"
           ls -l
-          #./show_env.sh
-          #./show_env.pl
 
