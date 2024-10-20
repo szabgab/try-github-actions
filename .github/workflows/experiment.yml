@@ -11,33 +11,33 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 21
-
-      - name: Single command
-        run: echo Hello World!
-
-      - name: uname - pwd - ls
-        run: |
-          uname
-          echo "-----"
-          pwd
-          echo "-----"
-          ls -l
-
-      - name: Show env
-        run: |
-          printenv | sort
-
-      - name: Changed files
-        run: |
-          echo 2
-          git diff --name-only HEAD~2
-          echo 20
-          git diff --name-only HEAD~20
-          echo 21
-          git diff --name-only HEAD~21
-
+        #        with:
+        #          fetch-depth: 21
+        #
+        #      - name: Single command
+        #        run: echo Hello World!
+        #
+        #      - name: uname - pwd - ls
+        #        run: |
+        #          uname
+        #          echo "-----"
+        #          pwd
+        #          echo "-----"
+        #          ls -l
+        #
+        #      - name: Show env
+        #        run: |
+        #          printenv | sort
+        #
+        #      - name: Changed files
+        #        run: |
+        #          echo 2
+        #          git diff --name-only HEAD~2
+        #          echo 20
+        #          git diff --name-only HEAD~20
+        #          echo 21
+        #          git diff --name-only HEAD~21
+        #
       - name: Get changed files
         id: changed-files
         uses: tj-actions/changed-files@v45
