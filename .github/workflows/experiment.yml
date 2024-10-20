@@ -37,3 +37,16 @@ jobs:
           git diff --name-only HEAD~20
           echo 21
           git diff --name-only HEAD~21
+
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v45
+      # NOTE: `since_last_remote_commit: true` is implied by default and falls back to the previous local commit.
+
+      - name: List all changed files
+        env:
+          ALL_CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
+        run: |
+          for file in ${ALL_CHANGED_FILES}; do
+            echo "$file was changed"
+          done
