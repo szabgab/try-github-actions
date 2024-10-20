@@ -25,3 +25,6 @@ jobs:
         run: |
           printenv | sort
 
+      - name: Changed files
+        run: |
+          git diff --name-only HEAD~2
