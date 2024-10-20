@@ -27,4 +27,7 @@ jobs:
 
       - name: Changed files
         run: |
+          echo 2
+          git diff --name-only HEAD~2
+          echo 20
           git diff --name-only HEAD~2
