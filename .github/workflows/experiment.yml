@@ -13,13 +13,15 @@ jobs:
       - name: Single command
         run: echo Hello World!
 
-      - name: Show env
+      - name: uname - pwd - ls
         run: |
           uname
-          echo "-----"
-          printenv | sort
           echo "-----"
           pwd
           echo "-----"
           ls -l
+
+      - name: Show env
+        run: |
+          printenv | sort
 
